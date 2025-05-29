@@ -175,7 +175,7 @@ header .navbar {
   margin-right: 30px;
 }
 
-/* responsive */
+/* responsive styling */
 
 @media screen and (max-width: 900px) {
   :root {
