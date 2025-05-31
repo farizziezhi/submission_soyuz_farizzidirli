@@ -74,16 +74,6 @@ img {
   font-size: var(--font-size-xl);
 }
 
-.section-title::after {
-  content: "";
-  width: 80px;
-  height: 5px;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: var(--border-radius-s);
-  background: var(--secondary-color);
-}
-
 /* Navbar */
 header {
   position: fixed;
@@ -250,7 +240,7 @@ header .navbar {
   min-height: 100vh;
   color: var(--white-color);
   background: var(--dark-color);
-  padding: 120px 0 100px;
+  padding: 80px 0 100px;
 }
 
 .menu-section .menu-list {
@@ -285,6 +275,27 @@ header .navbar {
   font-size: var(--font-size-m);
 }
 
+/* contact section */
+
+.contact-section {
+  min-height: 100vh;
+  color: var(--white-color);
+  background: var(--dark-color);
+  padding: 80px 0 100px;
+}
+
+.contact-section .contact-info-list .contact-info {
+  width: 33%;
+  padding: 50px 25px;
+  box-sizing: border-box;
+  text-align: center;
+  float: left;
+}
+
+.contact-section .contact-info-list .contact-info p {
+  padding-top: 20px;
+}
+
 /* responsive styling */
 
 @media screen and (max-width: 1024px) {
@@ -305,17 +316,6 @@ header .navbar {
     --font-size-xxl: 1.8rem;
   }
 
-  body.show-mobile-menu header::before {
-    content: "";
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.2);
-  }
-
   .navbar :where(#menu-close-button, #menu-open-button) {
     display: block;
     font-size: var(--font-size-l);
@@ -334,9 +334,9 @@ header .navbar {
   .navbar .nav-menu {
     display: block;
     position: fixed;
-    left: -300px;
+    left: -1000px;
     top: 0;
-    width: 300px;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -360,7 +360,7 @@ header .navbar {
   .hero-section .section-content {
     gap: 50px;
     text-align: center;
-    padding: 30px 20px 20px;
+    padding: 120px 20px 20px;
     flex-direction: column-reverse;
     justify-content: center;
   }
@@ -399,6 +399,12 @@ header .navbar {
 
   .menu-section .menu-list .menu-item .menu-image {
     max-width: 200px;
+  }
+
+  .contact-section .contact-info-list .contact-info {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
   }
 }
 
