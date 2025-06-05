@@ -13,11 +13,12 @@
   /* color */
   --white-color: #fff;
   --dark-color: #252525;
-  --primary-color: #626f47;
-  --secondary-color: #f0bb78;
+  --primary-color: #bbd8a3;
+  --secondary-color: #bf9264;
   --light-pink-color: #faf4f5;
   --medium-gray-color: #ccc;
-  --nav-color: #f5ecd5;
+  --nav-color: #626f47;
+  --text-color: #fff;
 
   /* Font size */
   --font-size-s: 0.9rem;
@@ -74,6 +75,17 @@ img {
   font-size: var(--font-size-xl);
 }
 
+.darkmode {
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color: #626f47;
+  --secondary-color: #f0bb78;
+  --light-pink-color: #faf4f5;
+  --medium-gray-color: #ccc;
+  --nav-color: #f5ecd5;
+  --text-color: #252525;
+}
+
 /* Navbar */
 header {
   position: fixed;
@@ -97,6 +109,14 @@ header .navbar {
 .navbar .nav-menu {
   display: flex;
   gap: 10px;
+  margin-left: auto;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
 }
 
 .navbar .nav-menu .nav-link {
@@ -114,6 +134,32 @@ header .navbar {
 
 .navbar :where(#menu-close-button, #menu-open-button) {
   display: none;
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#theme-switch svg {
+  fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 /* hero section */
@@ -186,7 +232,8 @@ header .navbar {
 .about-section {
   min-height: 100vh;
   padding: 220px 0;
-  background: var(--light-pink-color);
+  color: var(--nav-color);
+  background: var(--primary-color);
 }
 
 .about-section .section-content {
@@ -225,7 +272,7 @@ header .navbar {
 }
 
 .about-section .social-link-list .social-link {
-  color: var(--primary-color);
+  color: var(--nav-color);
   font-size: var(--font-size-l);
   transition: 0.2s ease;
 }
@@ -238,8 +285,8 @@ header .navbar {
 
 .menu-section {
   min-height: 100vh;
-  color: var(--white-color);
-  background: var(--dark-color);
+  color: var(--nav-color);
+  background: var(--primary-color);
   padding: 80px 0 100px;
 }
 
@@ -279,8 +326,8 @@ header .navbar {
 
 .contact-section {
   min-height: 100vh;
-  color: var(--white-color);
-  background: var(--dark-color);
+  color: var(--nav-color);
+  background: var(--primary-color);
   padding: 80px 0 100px;
 }
 
@@ -329,7 +376,7 @@ header .navbar {
 
 .footer-section .policy-text .separator {
   margin: 0 5px;
-  color:var(--white-color);
+  color: var(--white-color);
 }
 
 /* responsive styling */
@@ -391,6 +438,16 @@ header .navbar {
     display: block;
     margin-top: 17px;
     font-size: var(--font-size-l);
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+
+  #theme-switch {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
   }
 
   .hero-section .section-content {
