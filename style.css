@@ -272,13 +272,21 @@ header .navbar {
 }
 
 .about-section .social-link-list .social-link {
-  color: var(--nav-color);
-  font-size: var(--font-size-l);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.2s ease;
 }
 
-.about-section .social-link-list .social-link:hover {
-  color: var(--secondary-color);
+.about-section .social-link-list .social-link svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--nav-color);
+  transition: 0.2 ease;
+}
+
+.about-section .social-link-list .social-link:hover svg {
+  fill: var(--secondary-color);
 }
 
 /* menu section */
@@ -343,6 +351,12 @@ header .navbar {
   padding-top: 20px;
 }
 
+.contact-section .contact-info-list .contact-info svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--nav-color);
+}
+
 /* Footer section styling */
 .footer-section {
   padding: 20px 0;
@@ -352,33 +366,12 @@ header .navbar {
 .footer-section .section-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.footer-section :where(.copyright-text, .social-link, .policy-link) {
-  color: var(--white-color);
-  transition: 0.2s ease;
-}
-
-.footer-section .social-link-list {
-  display: flex;
-  gap: 25px;
-}
-
-.footer-section .social-link-list .social-link {
-  font-size: var(--font-size-l);
-}
-
-.footer-section .social-link-list .social-link:hover,
-.footer-section .policy-text .policy-link:hover {
-  color: var(--secondary-color);
-}
-
-.footer-section .policy-text .separator {
-  margin: 0 5px;
+.footer-section .copyright-text {
   color: var(--white-color);
 }
-
 /* responsive styling */
 
 @media screen and (max-width: 1024px) {
@@ -508,10 +501,5 @@ header .navbar {
 
   .menu-section .menu-list .menu-item {
     width: 100%;
-  }
-
-  .footer-section .section-content {
-    flex-direction: column;
-    gap: 20px;
   }
 }
